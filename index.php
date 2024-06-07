@@ -1,28 +1,12 @@
-pagina web:
-index:
 <?php
+// Inicia la sesión
 session_start();
 
-// Definir productos
-$productos = array(
-    array("id" => 1, "nombre" => "Ordenador Portátil", "precio" => 899.99, "imagen" => "laptop.jpg"),
-    array("id" => 2, "nombre" => "Teclado Mecánico", "precio" => 129.99, "imagen" => "teclado.jpg"),
-    array("id" => 3, "nombre" => "Monitor UltraWide", "precio" => 449.99, "imagen" => "monitor.jpg"),
-    // Agrega más productos según sea necesario
-);
-
-// Función para agregar un producto al carrito
-function agregarAlCarrito($id) {
-    $_SESSION['carrito'][] = $id;
-}
-
-// Función para obtener el número de productos en el carrito
-function obtenerCantidadCarrito() {
-    if (isset($_SESSION['carrito'])) {
-        return count($_SESSION['carrito']);
-    } else {
-        return 0;
-    }
+// Verifica si el usuario ya inició sesión
+if (isset($_SESSION['usuario'])) {
+    // Si el usuario ya inició sesión, redirige a la página de inicio
+    header("Location: login.php");
+    exit; // Asegura que el script se detenga después de la redirección
 }
 ?>
 
@@ -31,197 +15,70 @@ function obtenerCantidadCarrito() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Masters</title>
-    <link rel="icon" type="image/png" href="C:\xampp\htdocs\icono.png">
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('imagen.jpg');
-            background-size: contain; /* Empequeñecer la imagen para que quepa en la ventana */
-            background-position: center; /* Centrar la imagen */
-            background-repeat: no-repeat; /* Evitar que la imagen se repita */
-            background-size: contain; /* Empequeñecer la imagen para que quepa en la ventana */
-            
-        }
-
-        .alt {
-            color: white
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            color: black
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        header nav ul li {
-            margin-right: 20px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .hero {
-            background-image: url('hero-image.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            margin-bottom: 50px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .productos {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-        }
-
-        .producto {
-            border: 1px solid #ccc;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .producto img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .producto h3 {
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-
-        .producto .precio {
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-
-        .producto .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .producto .btn:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .logo-img {
-            width: 50px; /* Ancho deseado */
-            height: auto; /* Para mantener la proporción original */
-            margin-top: 10px; /* Bajar un poco el logo */
-        }
-
-        .company-name {
-            margin-left: 20px; /* Espacio entre el logo y el nombre de la empresa */
-            color: white; /* Color de texto deseado */
-            margin-top: -10px; /* Subir un poco el título de la empresa */
-        }
-    </style>
+    <title>Inicio - Keymasters</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="container">
-        <div class="logo">
-            <!-- Agrega tu logo aquí -->
-            <img src="logo.png"  class="logo-img">
-            <span class="company-name">KEY MASTERS</span>
+    <div class="logo">
+            <img src="logo.png" alt="Logo de Keymasters" >
+            <h1>Keymasters</h1>
         </div>
-            <nav>
-                <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="quienessomos.php">Quiénes Somos</a></li>
-                    <li><a href="productos.php">Productos</a></li>
-                    <li><a href="contactanos.php">Contacto</a></li>
-                    <li><a href="tienda.php">Tienda</a></li>
-                    <li><a href="login.php">Login</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+        <a href="index.php">Inicio</a>
+            <div class="dropdown">
+                <a href="about.php" class="dropbtn">Sobre Nosotros</a>
+                <div class="dropdown-content">
+                    <a href="history.php">Nuestra Historia</a>
+                    <a href="mission.php">Nuestra Misión</a>
+                    <a href="team.php">Nuestro Equipo</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="services.php" class="dropbtn">Servicios</a>
+                <div class="dropdown-content">
+                    <a href="testimoniosdeclientes.php">Testimonios de Clientes</a> <!-- Enlace agregado -->
+                    <a href="consulting.php">Consultoría</a>
+                    <a href="development.php">Desarrollo</a>
+                    <a href="support.php">Soporte</a>
+                </div>
+            </div>
+            <a href="contact.php">Contacto</a>
+            <a href="blog.php">Blog</a>
+            <a href="login.php" class="login-link">Login</a> <!-- Enlace directo a la página de inicio de sesión -->
+        </nav>
     </header>
+    <div class="container">
+        <section>
+            <h2>Bienvenidos a Keymasters</h2>
+            <p>Keymasters es una consultoría informática especializada en brindar soluciones tecnológicas avanzadas para su empresa.</p>
+            <p>Ofrecemos una amplia gama de servicios, incluyendo consultoría, desarrollo de software y soporte técnico.</p>
+        </section>
 
-    <main>
-        <section class="hero" style="background-image: url('c:\xampp\htdocs\imagen.jpg');">
-            <div class="container">
-                <h1>Bienvenido a nuestra tienda en línea</h1>
-                <p>Encuentra una amplia selección de ordenadores y teclados de alta calidad</p>
+        <section class="features">
+            <h2>Nuestros Servicios Destacados</h2>
+            <div class="card">
+                <h3>Consultoría Especializada</h3>
+                <p>Proveemos asesoramiento experto para optimizar su infraestructura tecnológica y mejorar su eficiencia operativa.</p>
+            </div>
+            <div class="card">
+                <h3>Desarrollo de Software a Medida</h3>
+                <p>Desarrollamos soluciones de software personalizadas para satisfacer las necesidades únicas de su negocio.</p>
+            </div>
+            <div class="card">
+                <h3>Soporte Técnico 24/7</h3>
+                <p>Nuestro equipo de soporte está disponible en todo momento para resolver cualquier problema técnico que pueda surgir.</p>
             </div>
         </section>
 
-        <section class="productos">
-            <div class="container">
-                <h2>Productos Destacados</h2>
-                <?php foreach ($productos as $producto): ?>
-                    <div class="producto">
-                        <img src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
-                        <h3><?php echo $producto['nombre']; ?></h3>
-                        <p class="precio">$<?php echo $producto['precio']; ?></p>
-                        <a href="?agregar=<?php echo $producto['id']; ?>" class="btn">Agregar al Carrito</a>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+        <section class="cta">
+            <h2>¿Listo para Transformar su Negocio?</h2>
+            <p>Contáctenos hoy para descubrir cómo nuestras soluciones tecnológicas pueden impulsar su empresa hacia el éxito.</p>
+            <a href="contact.php" class="btn">Contáctenos</a>
         </section>
-    </main>
-
+    </div>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Tienda de Tecnologia e inovacion. Keymasters Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2024 Keymasters. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
