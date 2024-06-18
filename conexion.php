@@ -2,7 +2,7 @@
 // Configuración de la base de datos
 $host = "localhost";
 $usuario = "root";
-$contrasena = "root";
+$contrasena = "Keymasters";
 $base_datos = "Keymasters";
 
 // Conexión a la base de datos
