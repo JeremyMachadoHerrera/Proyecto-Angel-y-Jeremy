@@ -1,56 +1,98 @@
-<?php
-session_start();
-require_once("conexion.php");
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $contrasena = $_POST["contrasena"];
-
-    $sql = "SELECT * FROM usuarios WHERE email = ? AND contrasena = ?";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("ss", $email, $contrasena);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-        // Usuario autenticado, redirigir a la página deseada
-        $_SESSION["email"] = $email;
-        header("Location: index.php");
-        exit();
-    } else {
-        $error = "Credenciales inválidas. Por favor, inténtalo de nuevo.";
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión - Keymasters</title>
+    <title>Iniciar Sesión - Keymasters</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        #login {
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        #login h2 {
+            margin-bottom: 20px;
+        }
+        #login input[type="text"],
+        #login input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+        }
+        #login input[type="text"]:focus,
+        #login input[type="password"]:focus {
+            outline: none;
+            border-color: #555;
+        }
+        #login button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        #login button:hover {
+            background-color: #555;
+        }
+        
+    </style>
 </head>
 <body>
     <header>
-        <!-- Encabezado de tu página -->
+        <div class="logo">Keymasters</div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="register.php">Registro</a></li>
+                <li><a href="login.php">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <section>
-            <h2>Iniciar sesión</h2>
-            <?php if(isset($error)) { ?>
-                <div class="error"><?php echo $error; ?></div>
-            <?php } ?>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required><br>
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena" required><br>
-                <button type="submit">Iniciar sesión</button>
-            </form>
-        </section>
-    </div>
+
+    <section id="login">
+        <h2>Iniciar Sesión</h2>
+        <form action="login_Action.php" method="post">
+            <input type="text" name="username" placeholder="Nombre de Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </section>
+
     <footer>
-        <!-- Pie de página de tu página -->
+        <p>&copy; 2024 Consultoría Informática. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
