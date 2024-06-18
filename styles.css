@@ -1,163 +1,432 @@
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    background-image: url('fondoempresa5.jpg'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    color: #333;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Asegura que el contenido ocupe al menos el 100% de la altura visible */
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
 header {
-    background: #333;
+    background: #2c3e50;
     color: #fff;
-    padding: 1em 0;
-    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    margin: 0;
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo img {
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 nav {
-    background: #444;
-    color: #fff;
+    background-color: #444;
     display: flex;
     justify-content: center;
-    padding: 1em 0;
+    margin-top: 10px;
 }
 
 nav a {
     color: #fff;
-    margin: 0 1em;
     text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+    transition: color 0.3s;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a:hover,
+nav a.active {
+    color: #f39c12;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    flex: 1;
-}
-
-section {
-    padding: 2em 0;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto;
-}
-
-.card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 1em;
-    padding: 1em;
-    text-align: center;
-}
-
-/* Dropdown Container */
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: inherit;
-    border: none;
-    color: inherit;
-    padding: 14px 16px;
-    font-size: inherit;
-    cursor: pointer;
-}
-
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #444;
+    background-color: #34495e;
     min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 5px;
 }
 
-/* Links inside the Dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .dropdown-content a {
-    color: white;
+    color: #fff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #555;
+
+
+/* Hero section */
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #555;
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.team-photo {
-    width: 1px; /* ajusta el tamaño según sea necesario */
-    height: 1px; /* ajusta el tamaño según sea necesario */
-    border-radius: 50%; /* esto hará que las imágenes sean redondas */
-    object-fit: cover; /* asegurará que la imagen cubra el área del contenedor */
-    display: block; /* para centrar la imagen */
-    margin: 0 auto 10px auto; /* para centrar la imagen y añadir espacio inferior */
-}
-
-.logo img {
-    width: 50px; /* Ajusta el ancho del logo según sea necesario */
-    margin-right: 10px; /* Espacio entre el logo y el título */
-}
-
-.logo {
-    display: flex;
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: center; /* Centra horizontalmente los elementos */
-}
-
-.testimonial-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.testimonial-container {
-    width: 48%; /* Ajusta el ancho según tus preferencias */
+.hero p {
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-.testimonial-card {
-    padding: 20px;
-    border: 1px solid #ccc;
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #f39c12;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    transition: background 0.3s;
 }
 
-.login-link {
-    margin-left: 30px; /* Ajustar según sea necesario para la posición deseada */
+.cta-button:hover {
+    background: #e67e22;
 }
+
+/* Servicios section */
+#resumen-servicios {
+    background: #ecf0f1;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+#resumen-servicios h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.servicios {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.servicio h3 {
+    margin-bottom: 15px;
+}
+
+.servicio p {
+    color: #666;
+}
+
+/* Características section */
+#caracteristicas {
+    background: #bdc3c7;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+#caracteristicas h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.caracteristicas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.caracteristica {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.caracteristica img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.caracteristica h3 {
+    margin-bottom: 15px;
+}
+
+.caracteristica p {
+    color: #666;
+}
+
+/* Testimonios section */
+#testimonios {
+    background: #ecf0f1;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+#testimonios h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testimonios {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.testimonio {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonio blockquote {
+    font-style: italic;
+    color: #666;
+}
+
+.testimonio cite {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Boletín section */
+#boletin {
+    background: #bdc3c7;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+#boletin h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.suscripcion-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.suscripcion-form input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+    max-width: 400px;
+}
+
+.suscripcion-form button {
+    padding: 10px 20px;
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.suscripcion-form button:hover {
+    background: #e67e22;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -4px 2px -2px rgba(0, 0, 0, 0.1);
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: #f39c12;
+}
+
+footer .social-media img {
+    max-width: 20px;
+    vertical-align: middle;
+}
+
+/* Banner de historia */
+.history-banner {
+    background: url('history-banner.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+}
+
+.history-banner .banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.history-banner h2 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.history-banner p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Contenido de la historia */
+.history-content {
+    background: #f2f2f2;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.history-content h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.history-content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Sección de hitos */
+#milestones {
+    background: #ecf0f1;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+#milestones h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.milestone {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 200px;
+}
+
+.milestone h3 {
+    margin-bottom: 10px;
+}
+
+.milestone p {
+    color: #666;
+}
+
+a {
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+h3 {
+    color: black;
+}
+
+nav a {
+    color: black; /* Cambia el color del texto a negro */
+}
+
 
 
