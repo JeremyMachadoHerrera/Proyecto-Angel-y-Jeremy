@@ -3,57 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipo - Keymasters</title>
+    <title>Nuestro Equipo - Keymasters</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para esta página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        .team-member img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member h2 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .team-member p {
+            color: #666;
+        }
+
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #f39c12;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo de Keymasters" >
+            <img src="logo.png" alt="Logo de Keymasters">
             <h1>Keymasters</h1>
         </div>
         <nav>
-        <a href="index.php">Inicio</a>
+            <a href="index.php">Inicio</a>
             <div class="dropdown">
-                <a href="about.php" class="dropbtn">Sobre Nosotros</a>
+                <a href="nosotros.php" class="dropbtn">Nosotros</a>
                 <div class="dropdown-content">
                     <a href="history.php">Nuestra Historia</a>
-                    <a href="mission.php">Nuestra Misión</a>
-                    <a href="team.php">Nuestro Equipo</a>
+                    <a href="mision.php">Nuestra Misión</a>
+                    <a href="equipo.php">Nuestro Equipo</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a href="services.php" class="dropbtn">Servicios</a>
+                <a href="servicios.php" class="dropbtn">Servicios</a>
                 <div class="dropdown-content">
-                    <a href="testimoniosdeclientes.php">Testimonios de Clientes</a> <!-- Enlace agregado -->
-                    <a href="consulting.php">Consultoría</a>
-                    <a href="development.php">Desarrollo</a>
+                    <a href="testimoniosdeclientes.php">Testimonios de Clientes</a>
+                    <a href="consultoria.php">Consultoría</a>
+                    <a href="desarrollo.php">Desarrollo</a>
                     <a href="support.php">Soporte</a>
                 </div>
             </div>
-            <a href="contact.php">Contacto</a>
+            <a href="contacto.php">Contacto</a>
             <a href="blog.php">Blog</a>
-            <a href="login.php" class="login-link">Login</a> <!-- Enlace directo a la página de inicio de sesión -->
+            <a href="tienda.php">Tienda</a>
+            <a href="login.php" class="login-link">Login</a>
         </nav>
     </header>
-    <div class="container">
-        <section>
-            <h2>Equipo</h2>
-            <div class="card">
-                <img src="imagenes/Angel.jpg" alt="Angel de la Hoz" class="team-photo">
-                <h3>Angel de la Hoz</h3>
-                <p>CEO y Fundador</p>
-                <p>Juan tiene más de 20 años de experiencia en el sector de TI y es el fundador de Keymasters.</p>
-            </div>
-            <div class="card">
-                <img src="images/maria_garcia.jpg" alt="María García" class="team-photo">
-                <h3>Jeremy Jesus Machado Herrera</h3>
-                <p>CTO</p>
-                <p>María es la directora de tecnología y lidera el desarrollo de nuestras soluciones innovadoras.</p>
-            </div>
-        </section>
-    </div>
+
+    <section class="container">
+        <h1>Nuestro Equipo</h1>
+
+        <div class="team-member">
+            <img src="jeremy.jpg" alt="Miembro del equipo 1">
+            <h2>Jeremy Jesus Machado Herrera</h2>
+            <p>CEO y Fundador</p>
+        </div>
+
+        <div class="team-member">
+            <img src="Angel.jpg" alt="Miembro del equipo 2">
+            <h2>Angel de la hoz</h2>
+            <p>Desarrollador Frontend</p>
+        </div>
+
+        <!-- Agrega más miembros según sea necesario -->
+
+        <p>Vuelve a <a href="nosotros.php">Sobre Nosotros</a></p>
+    </section>
+
     <footer>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
         <p>&copy; 2024 Keymasters. Todos los derechos reservados.</p>
     </footer>
 </body>
