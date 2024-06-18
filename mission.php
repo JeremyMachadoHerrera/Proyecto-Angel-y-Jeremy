@@ -3,8 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misión - Keymasters</title>
+    <title>Nuestra Misión - Keymasters</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que el contenido ocupe al menos el 100% de la altura visible */
+        }
+
+        /* Header y contenido principal */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 100px;
+            vertical-align: middle;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .container {
+            flex: 1; /* Esto hace que el contenido ocupe todo el espacio disponible */
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .container h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .container a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .feature {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .mission-statement {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        .mission-statement h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .mission-statement p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #f39c12;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,69 +174,65 @@
             <h1>Keymasters</h1>
         </div>
         <nav>
-        <a href="index.php">Inicio</a>
+            <a href="index.php">Inicio</a>
             <div class="dropdown">
-                <a href="about.php" class="dropbtn">Sobre Nosotros</a>
+                <a href="nosotros.php" class="dropbtn">Nosotros</a>
                 <div class="dropdown-content">
                     <a href="history.php">Nuestra Historia</a>
-                    <a href="mission.php">Nuestra Misión</a>
-                    <a href="team.php">Nuestro Equipo</a>
+                    <a href="mision.php">Nuestra Misión</a>
+                    <a href="equipo.php">Nuestro Equipo</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a href="services.php" class="dropbtn">Servicios</a>
+                <a href="#" class="dropbtn">Servicios</a>
                 <div class="dropdown-content">
-                    <a href="testimoniosdeclientes.php">Testimonios de Clientes</a> <!-- Enlace agregado -->
-                    <a href="consulting.php">Consultoría</a>
-                    <a href="development.php">Desarrollo</a>
+                    <a href="testimoniosdeclientes.php">Testimonios de Clientes</a>
+                    <a href="consultoria.php">Consultoría</a>
+                    <a href="desarrollo.php">Desarrollo</a>
                     <a href="support.php">Soporte</a>
                 </div>
             </div>
-            <a href="contact.php">Contacto</a>
+            <a href="contacto.php">Contacto</a>
             <a href="blog.php">Blog</a>
-            <a href="login.php" class="login-link">Login</a> <!-- Enlace directo a la página de inicio de sesión -->
+            <a href="Tienda.php">Tienda</a>
+            <a href="login.php" class="login-link">Login</a>
         </nav>
     </header>
+
     <div class="container">
-        <section class="mission-section">
-            <h2>Nuestra Misión</h2>
-            <p>En Keymasters, nuestra misión es proporcionar soluciones tecnológicas innovadoras y eficientes que permitan a nuestros clientes alcanzar sus objetivos empresariales y superar sus desafíos tecnológicos. Nos comprometemos a ofrecer un servicio de alta calidad, con un enfoque en la satisfacción del cliente y la mejora continua.</p>
-        </section>
+        <h1>Nuestra Misión</h1>
+        <p>En Keymasters, nos dedicamos a proporcionar soluciones tecnológicas innovadoras y de calidad que impulsen el crecimiento y el éxito de nuestros clientes. Estamos comprometidos con la excelencia, la integridad y el servicio al cliente, creando relaciones sólidas basadas en la confianza y el profesionalismo.</p>
         
-        <section class="vision-section">
-            <h2>Nuestra Visión</h2>
-            <p>Ser líderes en la industria de la consultoría informática, reconocidos por nuestra capacidad de transformar negocios a través de soluciones tecnológicas avanzadas y un servicio excepcional. Aspiramos a ser el socio de confianza de las empresas que buscan innovación y eficiencia en sus procesos.</p>
-        </section>
+        <div class="features">
+            <div class="feature">
+                <h3>Innovación</h3>
+                <p>Nos mantenemos a la vanguardia de la tecnología para ofrecer soluciones innovadoras.</p>
+            </div>
+            <div class="feature">
+                <h3>Calidad</h3>
+                <p>Garantizamos estándares de calidad en cada proyecto y servicio que entregamos.</p>
+            </div>
+            <div class="feature">
+                <h3>Compromiso</h3>
+                <p>Nuestro compromiso es satisfacer las necesidades de nuestros clientes con profesionalismo.</p>
+            </div>
+        </div>
 
-        <section class="values-section">
-            <h2>Nuestros Valores</h2>
-            <ul>
-                <li><strong>Integridad:</strong> Actuamos con honestidad y transparencia en todas nuestras interacciones.</li>
-                <li><strong>Innovación:</strong> Fomentamos la creatividad y la búsqueda constante de nuevas y mejores formas de hacer las cosas.</li>
-                <li><strong>Excelencia:</strong> Nos esforzamos por superar las expectativas y entregar resultados de alta calidad.</li>
-                <li><strong>Compromiso:</strong> Estamos dedicados al éxito de nuestros clientes y colaboradores.</li>
-                <li><strong>Colaboración:</strong> Valoramos el trabajo en equipo y la construcción de relaciones sólidas y duraderas.</li>
-            </ul>
-        </section>
+        <div class="mission-statement">
+            <h2>Declaración de Misión Ampliada</h2>
+            <p>En Keymasters, no solo proporcionamos servicios tecnológicos avanzados, sino que también nos esforzamos por construir relaciones duraderas con nuestros clientes, entendiendo sus necesidades específicas y ofreciendo soluciones personalizadas que impulsan su crecimiento y eficiencia operativa. Nuestro compromiso con la innovación y la calidad nos distingue en el mercado, garantizando resultados excepcionales y sostenibles.</p>
+        </div>
 
-        <section class="objectives-section">
-            <h2>Objetivos Estratégicos</h2>
-            <ul>
-                <li>Desarrollar soluciones tecnológicas que impulsen la eficiencia y competitividad de nuestros clientes.</li>
-                <li>Expandir nuestra presencia en el mercado global a través de la innovación y la excelencia en el servicio.</li>
-                <li>Fortalecer nuestra cultura organizacional basada en valores éticos y profesionales.</li>
-                <li>Fomentar el crecimiento profesional y personal de nuestros colaboradores.</li>
-                <li>Establecer alianzas estratégicas que complementen y enriquezcan nuestras capacidades.</li>
-            </ul>
-        </section>
-
-        <section class="commitment-section">
-            <h2>Nuestro Compromiso</h2>
-            <p>Estamos comprometidos con la calidad y la mejora continua en todos los aspectos de nuestro negocio. Nos esforzamos por entender las necesidades específicas de nuestros clientes y ofrecer soluciones personalizadas que agreguen valor a sus operaciones. Creemos en la importancia de la sostenibilidad y la responsabilidad social, y trabajamos para ser una empresa que contribuye positivamente a la sociedad y al medio ambiente.</p>
-        </section>
+        <p>Vuelve a <a href="nosotros.php">Sobre Nosotros</a></p>
     </div>
+
     <footer>
-        <p>&copy; 2024 Keymasters. Todos los derechos reservados.</p>
+        <p>&copy; <?php echo date('Y'); ?> Keymasters. Todos los derechos reservados.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
     </footer>
 </body>
 </html>
